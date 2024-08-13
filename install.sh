@@ -162,6 +162,7 @@ chmod 755 -R /var/www/html
 cp -fv ./virtualhost.conf /etc/apache2/sites-available/$TIBIA_REMOTE_HOSTNAME.conf
 sed -i "s/\$REMOTE_HOSTNAME/$TIBIA_REMOTE_HOSTNAME/g" /etc/apache2/sites-available/$TIBIA_REMOTE_HOSTNAME.conf
 sed -i "s/\$WWW_MYAAC_FOLDER_NAME/$WWW_MYAAC_FOLDER_NAME/g" /etc/apache2/sites-available/$TIBIA_REMOTE_HOSTNAME.conf
+/usr/sbin/a2enmod proxy_fcgi
 /usr/sbin/a2enmod php8.2
 /usr/sbin/a2ensite $TIBIA_REMOTE_HOSTNAME.conf
 systemctl reload apache2
