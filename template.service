@@ -1,0 +1,13 @@
+[Unit]
+Description=tibia-server
+After=network.target
+
+[Service]
+WorkingDirectory=$CANARY_DIR
+ExecStart=$CANARY_DIR/canary
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
