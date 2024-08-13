@@ -106,6 +106,7 @@ git clone --depth 1 https://github.com/opentibiabr/canary.git
 setfacl -R -m g:www-data:rx ./canary
 chmod -R 755 ./canary
 cd canary
+sed -i 's/static constexpr auto CLIENT_VERSION = [0-9]\{4\};/static constexpr auto CLIENT_VERSION = 1336;/' ./src/core.hpp
 mkdir -p build
 cd build
 cmake -DCMAKE_TOOLCHAIN_FILE=$RDIR/vcpkg/scripts/buildsystems/vcpkg.cmake .. --preset linux-release
